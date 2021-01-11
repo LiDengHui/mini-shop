@@ -2,6 +2,7 @@
     "name": "root",
     "private": true,
     "scripts": {
+        "codereview": "jscpd",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
         "commit": "git add -A && git-cz",
         "dev": "lerna run dev --parallel",
@@ -15,15 +16,14 @@
         "conventional-changelog-cli": "^2.1.1",
         "cz-conventional-changelog": "^3.3.0",
         "husky": "^4.3.7",
+        "jscpd": "^3.3.23",
         "lerna": "^3.22.1"
     },
-    "dependencies": {
-        "sequelize": "^6.3.5"
-    },
+    "dependencies": {},
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-            "pre-commit": "npm run lint",
+            "pre-commit": "npm run codereview && npm run lint",
             "pre-push": "npm run lint"
         }
     }

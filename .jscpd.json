@@ -1,0 +1,7 @@
+{
+    "threshold": 0,
+    "reporters": ["console"],
+    "pattern": "**/src/**/*",
+    "ignore": ["**/__snapshots__/**", "**/node_modules/**", "**/dist/**"],
+    "absolute": true
+}
