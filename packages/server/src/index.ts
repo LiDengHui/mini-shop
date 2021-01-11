@@ -19,7 +19,7 @@ app.use(
     swaggerUi.serve,
     swaggerUi.setup(SwaggerDocument, {
         explorer: true,
-    })
+    }),
 );
 app.get("/", (req, res) => res.send("Express + TypeScript Server"));
 
