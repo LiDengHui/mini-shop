@@ -1,0 +1,29 @@
+{
+    "name": "root",
+    "private": true,
+    "scripts": {
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+        "commit": "git add -A && git-cz",
+        "dev": "lerna run dev --parallel",
+        "lint": "lerna run lint",
+        "build": "lerna run build"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "commitizen": "^4.2.2",
+        "cz-conventional-changelog": "^3.3.0",
+        "husky": "^4.3.7",
+        "lerna": "^3.22.1"
+    },
+    "dependencies": {
+        "sequelize": "^6.3.5"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "npm run lint",
+            "pre-push": "npm run lint"
+        }
+    }
+}
