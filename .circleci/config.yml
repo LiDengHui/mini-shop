@@ -1,20 +1,20 @@
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
+    node: circleci/node@3.0.0
 jobs:
-  node-tests:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-          - run: npm install
-          - run: npm run lint 
-          - run: npm test
-      - run: echo '测试通过'
+    node-tests:
+        executor:
+            name: node/default
+        steps:
+            - checkout
+            - node/with-cache:
+                  steps:
+                      - run: npm install
+                      - run: npm codereview
+                      - run: npm run lint
+            - run: echo '测试通过'
 
 workflows:
-  node-tests:
-    jobs:
-      - node/test
+    node-tests:
+        jobs:
+            - node/test
