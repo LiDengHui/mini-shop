@@ -5,6 +5,7 @@
         "codereview": "jscpd",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
         "commit": "git add -A && git-cz",
+        "package": "lerna bootstrap",
         "dev": "lerna run dev --parallel",
         "lint": "lerna run lint",
         "build": "lerna run build"
