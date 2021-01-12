@@ -1,20 +1,17 @@
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
+  node: circleci/node@4.0.1 # This version number refers to the version of the orb, not the version of NodeJS
 jobs:
-  node-tests:
-    executor:
-      name: node/default
+  test:
+    executor: node/default
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-          - run: npm install
-          - run: npm run lint 
-          - run: npm test
-      - run: echo '测试通过'
-
+      - node/install-packages:
+          override-ci-command: lerna bootstrap
+          cache-path: ~/project/node_modules
+      - run: npm run codereview
+      - run: npm run lint
 workflows:
-  node-tests:
+  test_my_app:
     jobs:
-      - node/test
+      - test
