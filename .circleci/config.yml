@@ -6,7 +6,7 @@ jobs:
         executor: node/default
         steps:
             - checkout
-            - node/install-packages:
+            - node/install-packages
             - run: npm run package
             - run: npm run codereview
             - run: npm run lint
