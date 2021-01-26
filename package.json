@@ -28,7 +28,7 @@
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
             "pre-commit": "lint-staged && npm run  codereview && npm run lint",
-            "pre-push": "lint-staged && npm run codereview && npm run lint"
+            "pre-push": "lint-staged && npm run codereview && npm run lint && npm run test"
         }
     }
 }

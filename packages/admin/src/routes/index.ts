@@ -95,7 +95,7 @@ export const routeMenuState = selector<Route[]>({
     key: "routeMenuState",
     get: ({ get }) => {
         const { routes } = get(routeState);
-        return depthFirstSearch(
+        const arr = depthFirstSearch(
             routes,
             "path",
             "children",
@@ -106,5 +106,7 @@ export const routeMenuState = selector<Route[]>({
                 };
             },
         );
+
+        return arr;
     },
 });
