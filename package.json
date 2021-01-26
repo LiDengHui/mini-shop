@@ -8,6 +8,7 @@
         "package": "lerna bootstrap",
         "dev": "lerna run dev --parallel",
         "lint": "lerna run lint",
+        "test": "lerna run test",
         "build": "lerna run build"
     },
     "devDependencies": {
